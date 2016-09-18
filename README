@@ -1,0 +1,89 @@
+					    FINAL PROJECT - PHOTO EDITOR
+
+						Vashist Kutti Suresh
+						vsuresh@clemson.edu
+
+
+Basic Idea : 
+	To create a photo editor that performs operations like applying effects,frames,adjusting HSV, RGB channel mixer etc.
+	The photo editor contains two general modes, 
+		*The Preset mode which contains operations which is preset and user just needs to apply it. 
+		*The Adjustment mode which contains operations where adjustments on images can be made.
+
+Operating the photo editor : 
+	The photo editor uses User interaction from both the displayed image window and the terminal.
+	The operation calls are performed by clicking the image and pressing the respective operation call keys.
+	The user will need to use the terminal while giving choices, for selecting from the options in a operation.
+		Example working flow : 
+		->User Compiles and runs program
+		->User clicks displayed image
+		->presses 'e'
+		->Effects menu is displayed in terminal asking for choices
+		->user selects the required effect in choice by pressing numbers for the respective choice
+		->the effect is added
+
+Best image suited : img.png
+	
+Keyboard key-press keys and its functions:
+
+	PRESET MODE 'p' : Select-
+			'e' for effects
+			'f' for setting up frames
+	
+	ADJUSTMENT MODE 'a': Select-
+	 		'o' for changing Orientation
+	 		'h' for adjusting Hue,Saturation and value of the image
+	 		'g' for adjusting the gamma value of the image	
+	 		'c' for adjusting the RGB channels of the image
+			'UP_key' for increasing the value[RGB/HSV/gamma]
+			'DOWN_key' for decreasing the value[RGB/HSV/gamma]
+
+	 'u' for undo the previous action on the image
+	 'x' for comparing the image with the original one
+	 'w' for writing the image
+
+
+
+Running the program/Command line usage:
+			./project img.png [op.png]
+			
+	[op.png] is the write file
+
+
+Major Operations : 
+
+	----Preset Mode----
+
+	Effects : It has 6 major effects to choose from. Some effects may contain sub-categories too. 
+		1)Overlay effect - It is somewhat like the intensification of the image by adding an overlay of the same image, similar to photoshop.
+		2)Warm and cool effect - It has two sub categories : 1.Warm and 2.Cool where the user chooses one in the command line.
+					Warm effect creates an warmed version of the image
+					Cool effect creates a cooled version of the image
+		3)Black and white - It is a common effect which changes the image to black and white.
+		4)Deserted effect - This effect creates a deserted effect on the image. It has two options to choose from
+		5)Mirror effect - This is a crzy effect which mirrors half the image . It has two types Horizontal and Vertical . Use both to get crazy results.
+		6)Pray for paris - This effect is dedicated to the victims of Paris attacks. It is a similar one as which we have seen in Facebook display pictures.
+
+	Frames : The user gets to select from a choice of 5 frames and apply over the image. The choice of the frame is given by the user.
+
+	----Adjustment Mode----
+
+	Orientation : The user gets 3 choices of orienation changing. Vertical flip,Horizontal flip and Rotation . The selected option is performed.
+
+	Adjust HSV : This adjustment is to adjust the Hue,Saturation and Value of the image. Select the option as to what to change in the terminal and Press 'UP_key' or 'DOWN_key' while on the image to increase or decrease.
+
+	Gamma correction : This adjustment is to correct the gamma value of the image. After selecting this image ,Press 'UP_key' or 'DOWN_key' while on the image to increase or decrease the gamma value.
+
+	RGB Channel mixer : This one is similar to the one in photoshop which mixes and adjusts the Red,Green and blue values of the image.After selecting which channel to change in command line,Press 'UP_key' or 'DOWN_key' while on the image to increase or decrease.
+
+
+
+Bugs and discrepancies : 
+	*A major bug in the program is the fixed image size. I tried fixing it by using the concept of ratios where 
+	the images like frames,flares etc are scaled to the original image size and then worked within.
+	The concept what I thought was to get scaling factors by Original_image/frame_image (or viceversa if needed) for the x and y scaling factors.
+	But I faced issues while gettin the scaling factors and couldnt solve it .Hence worked with fixed image size .
+
+	*Typing incorrect values like alphabets in the command line may cause problem.
+
+ 
